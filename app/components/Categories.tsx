@@ -9,7 +9,7 @@ import Image from "next/image";
 
 const Categories = () => {
   return (
-    <section className="py-10 my-10 px-4 md:px-0">
+    <section className="py-10 my-10 mx-6">
       <Swiper
         navigation={true}
         slidesPerView={"auto"}

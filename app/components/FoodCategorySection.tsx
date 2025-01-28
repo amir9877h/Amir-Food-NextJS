@@ -4,7 +4,7 @@ import React from "react";
 
 const FoodCategorySection = () => {
   return (
-    <section className="py-10 my-10 px-4 md:px-0">
+    <section className="py-10 my-10 mx-6">
       <h2 className="font-bold">دسته بندی ها</h2>
       <div className="mt-4 grid gap-4 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
         {DATABASE.cats.map((item) => {

@@ -51,7 +51,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <div className="py-10 my-10 grid grid-cols-2 bg-body-color md:rounded-es-[124px] relative overflow-hidden">
+    <div className="py-10 my-10 mx-0 sm:mx-6 grid grid-cols-2 bg-body-color md:rounded-es-[124px] relative overflow-hidden">
       <div className="grow">
         <div className="ms-4">
           <p
