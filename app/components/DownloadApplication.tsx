@@ -5,7 +5,7 @@ import React from "react";
 
 const DownloadApplication = () => {
   return (
-    <section className="py-10 mb-10 mt-28 mx-0 sm:mx-6 grid lg:grid-cols-2 bg-body-color md:rounded-es-[124px] relative">
+    <section className="py-10 mb-10 mt-10 lg:mt-28 mx-0 sm:mx-6 grid lg:grid-cols-2 bg-body-color md:rounded-es-[124px] relative">
       <div className="px-16 py-9">
         <h1 className="text-4xl">اپلیکیشن امیرفود</h1>
         <p className="text-carbon-light my-12">
