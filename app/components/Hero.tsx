@@ -232,7 +232,7 @@ export default Hero;
 
 const SearchInput = () => {
   return (
-    <div className="flex items-center justify-between gap-2 bg-white rounded-full p-1 shadow-md max-w-[460px] min-w-fit w-full mx-8">
+    <div className="flex items-center justify-between gap-2 bg-white rounded-full p-1 shadow-md max-w-[460px] min-w-fit w-full mx-8 relative z-10">
       <div className="flex gap-1 ms-2">
         <IoLocationOutline className="h-6 w-6 text-carbon-light" />
         <input
