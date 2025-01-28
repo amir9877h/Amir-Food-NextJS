@@ -76,7 +76,7 @@ const Hero = () => {
               onSlideChange={() => console.log("slide change")}
               onSwiper={(swiper) => console.log(swiper)}
               modules={[Autoplay]}
-              className="md:h-[52px] h-12 !min-w-fit !ms-2 text-primary-main text-3xl md:text-5xl flex items-center"
+              className="md:h-[52px] h-12 !min-w-fit !ms-2 text-primary-main text-3xl md:text-5xl flex items-center mt-4"
               centeredSlides={true}
             >
               <SwiperSlide>نان</SwiperSlide>
@@ -99,42 +99,42 @@ const Hero = () => {
             <DialogTitle className="hidden">
               <p className="text-2xl font-bold">جستجوی آدرس</p>
             </DialogTitle>
-            <DialogContent className="sm:max-w-[480px]">
-              <DialogHeader>
-                <DialogDescription asChild>
-                  <p className="text-start font-bold !text-2xl pt-4">
-                    انتخاب آدرس
+              <DialogContent className="rounded-lg max-w-[480px]">
+                <DialogHeader>
+                  <DialogDescription asChild>
+                    <p className="text-start font-bold !text-2xl pt-4">
+                      انتخاب آدرس
+                    </p>
+                  </DialogDescription>
+                </DialogHeader>
+                <div>
+                  <p className="text-carbon-light text-sm">
+                    برای مشاهده مناسب‌ترین پیشنهادها به شما، ابتدا موقعیتتان را
+                    مشخص کنید.
                   </p>
-                </DialogDescription>
-              </DialogHeader>
-              <div>
-                <p className="text-carbon-light text-sm">
-                  برای مشاهده مناسب‌ترین پیشنهادها به شما، ابتدا موقعیتتان را
-                  مشخص کنید.
-                </p>
-                {/* show map here */}
-                <div className="h-[400px] w-full mt-4">
-                  <LoadScript
-                    googleMapsApiKey={
-                      (process.env.GOOGLE_MAPS_API_KEY as string) || ""
-                    }
-                  >
-                    <GoogleMap
-                      mapContainerStyle={containerStyle}
-                      center={defaultCenter}
-                      zoom={13}
-                      onLoad={onLoad}
-                      onUnmount={onUnmount}
-                    ></GoogleMap>
-                  </LoadScript>
+                  {/* show map here */}
+                  <div className="h-[400px] w-full mt-4">
+                    <LoadScript
+                      googleMapsApiKey={
+                        (process.env.GOOGLE_MAPS_API_KEY as string) || ""
+                      }
+                    >
+                      <GoogleMap
+                        mapContainerStyle={containerStyle}
+                        center={defaultCenter}
+                        zoom={13}
+                        onLoad={onLoad}
+                        onUnmount={onUnmount}
+                      ></GoogleMap>
+                    </LoadScript>
+                  </div>
                 </div>
-              </div>
-              <DialogFooter>
-                <Button type="submit" className="w-full font-bold text-xl">
-                  تایید
-                </Button>
-              </DialogFooter>
-            </DialogContent>
+                <DialogFooter>
+                  <Button type="submit" className="w-full font-bold text-xl">
+                    تایید
+                  </Button>
+                </DialogFooter>
+              </DialogContent>
           </Dialog>
         </div>
       </div>
@@ -159,7 +159,7 @@ const Hero = () => {
                 <p className=" px-1 py-2 rounded-lg bg-primary-main font-bold text-lg text-white hidden md:flex">{`ورود یا عضویت`}</p>
                 <LuUser className="flex md:hidden w-6 h-6" />
               </DialogTrigger>
-              <DialogContent className="sm:max-w-[480px]">
+              <DialogContent className="rounded-lg max-w-[480px]">
                 <DialogHeader>
                   <DialogTitle asChild>
                     <div className="absolute top-1 left-4">

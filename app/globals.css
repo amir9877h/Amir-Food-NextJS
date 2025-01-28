@@ -61,3 +61,39 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+
+@media screen and (width < 768px) {
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+}
+
+.swiper-button-disabled {
+  display: none !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  --swiper-navigation-color: #FF00A6;
+  --swiper-navigation-size: 24px;
+  background-color: #fff !important;
+  border-radius: 9999px;
+  padding: 25px !important;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  transform: translateY(-25%);
+  --swiper-navigation-top-offset: 50%;
+}
+
+.swiper-button-next {}
+
+/* .swiper-button-next {
+  content: '';
+  min-width: 100%;
+  min-height: 100%;
+  background: linear-gradient(to right, #fff, transparent);
+
+} */
