@@ -25,7 +25,7 @@ import { GoogleMap, LoadScript } from "@react-google-maps/api";
 const Hero = () => {
   const [phoneNumber, setPhoneNumber] = useState<string>("");
   const [iBtnDisabled, setIsBtnDisabled] = useState<boolean>(true);
-  const regex = new RegExp("^09\\d{8}$");
+  const regex = new RegExp("^09\\d{9}$");
 
   // Add these constants outside your component
   const containerStyle = {
@@ -73,8 +73,8 @@ const Hero = () => {
                 delay: 1000,
                 disableOnInteraction: false,
               }}
-              onSlideChange={() => console.log("slide change")}
-              onSwiper={(swiper) => console.log(swiper)}
+              // onSlideChange={() => console.log("slide change")}
+              // onSwiper={(swiper) => console.log(swiper)}
               modules={[Autoplay]}
               className="md:h-[52px] h-12 !min-w-fit !ms-2 text-primary-main text-3xl md:text-5xl flex items-center mt-4"
               centeredSlides={true}
@@ -99,42 +99,42 @@ const Hero = () => {
             <DialogTitle className="hidden">
               <p className="text-2xl font-bold">جستجوی آدرس</p>
             </DialogTitle>
-              <DialogContent className="rounded-lg max-w-[480px]">
-                <DialogHeader>
-                  <DialogDescription asChild>
-                    <p className="text-start font-bold !text-2xl pt-4">
-                      انتخاب آدرس
-                    </p>
-                  </DialogDescription>
-                </DialogHeader>
-                <div>
-                  <p className="text-carbon-light text-sm">
-                    برای مشاهده مناسب‌ترین پیشنهادها به شما، ابتدا موقعیتتان را
-                    مشخص کنید.
+            <DialogContent className="rounded-lg max-w-[480px]">
+              <DialogHeader>
+                <DialogDescription asChild>
+                  <p className="text-start font-bold !text-2xl pt-4">
+                    انتخاب آدرس
                   </p>
-                  {/* show map here */}
-                  <div className="h-[400px] w-full mt-4">
-                    <LoadScript
-                      googleMapsApiKey={
-                        (process.env.GOOGLE_MAPS_API_KEY as string) || ""
-                      }
-                    >
-                      <GoogleMap
-                        mapContainerStyle={containerStyle}
-                        center={defaultCenter}
-                        zoom={13}
-                        onLoad={onLoad}
-                        onUnmount={onUnmount}
-                      ></GoogleMap>
-                    </LoadScript>
-                  </div>
+                </DialogDescription>
+              </DialogHeader>
+              <div>
+                <p className="text-carbon-light text-sm">
+                  برای مشاهده مناسب‌ترین پیشنهادها به شما، ابتدا موقعیتتان را
+                  مشخص کنید.
+                </p>
+                {/* show map here */}
+                <div className="h-[400px] w-full mt-4">
+                  <LoadScript
+                    googleMapsApiKey={
+                      (process.env.GOOGLE_MAPS_API_KEY as string) || ""
+                    }
+                  >
+                    <GoogleMap
+                      mapContainerStyle={containerStyle}
+                      center={defaultCenter}
+                      zoom={13}
+                      onLoad={onLoad}
+                      onUnmount={onUnmount}
+                    ></GoogleMap>
+                  </LoadScript>
                 </div>
-                <DialogFooter>
-                  <Button type="submit" className="w-full font-bold text-xl">
-                    تایید
-                  </Button>
-                </DialogFooter>
-              </DialogContent>
+              </div>
+              <DialogFooter>
+                <Button type="submit" className="w-full font-bold text-xl">
+                  تایید
+                </Button>
+              </DialogFooter>
+            </DialogContent>
           </Dialog>
         </div>
       </div>
@@ -190,7 +190,7 @@ const Hero = () => {
                       value={phoneNumber}
                       onChange={(e) => {
                         setPhoneNumber(e.target.value);
-                        setIsBtnDisabled(!regex.test(phoneNumber));
+                        setIsBtnDisabled(!regex.test(e.target.value));
                       }}
                       className=""
                     />
